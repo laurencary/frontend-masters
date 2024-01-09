@@ -1,6 +1,32 @@
 // TODO: write the validation functions
 
+const isValidName = (name) => {
+    if (typeof name === "string" && name.trim().length > 2) {
+        return true;
+    }
 
+    return false;
+};
+
+const hoursAttended = (attended, length) => {
+    if (validValue(attended) && validValue(length)) {
+        return Number(attended) <= Number(length);
+    }
+
+    return false;
+
+    function validValue(input) {
+        if (typeof input !== "string" && typeof input !== "number") {
+            return false;
+        } 
+
+        if (Number(input) < 0 || parseInt(input) !== Number(input)) {
+            return false
+        }
+
+        return true;
+    }
+};
 
 // tests:
 console.log(isValidName("Frank") === true);

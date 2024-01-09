@@ -19,7 +19,7 @@ if (!Object.is || true) {
         return false;
 
         function isNegZero(x) {
-            return 1/x === -Infinity;
+            return x === 0 && 1/x === -Infinity;
         }
 
         function isItNaN(x) {
